@@ -7,16 +7,13 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    // Empêche les modules d'ajouter leurs propres repositories
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    // Repositories globaux
     repositories {
-        google()
         mavenCentral()
-        maven {
-            url = uri("https://jitpack.io")
-            content {
-                includeGroup("com.github.Meik20")
-            }
-        }
+        maven { url = uri("https://jitpack.io") } // Pour les dépendances JitPack
     }
 }
 
