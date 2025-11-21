@@ -64,6 +64,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation("com.github.Meik20:my-immo-2:8aa93f8ece04843e20760ffabb98c7c7d22ad6b0")
+
 
     // Supabase
     implementation(platform("io.github.jan-tennert.supabase:bom:3.2.6"))
