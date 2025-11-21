@@ -1,21 +1,33 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
     repositories {
-        google()
+        // Repositories globaux autorisés
         mavenCentral()
+
+        // JitPack (filtré uniquement pour ton dépôt)
+        maven {
+            url = uri("https://jitpack.io")
+            content {
+                includeGroup("com.github.Meik20")
+            }
+        }
+
+        // Exemple d'un autre repo (mais il exclut ton group)
+        maven {
+            url = uri("https://other repository")
+            content {
+                excludeGroupByRegex("com\\.github\\.Meik20.*")
+            }
+        }
     }
 }
 
